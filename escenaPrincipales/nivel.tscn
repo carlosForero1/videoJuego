@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://liyhhknic6mn"]
+
+[ext_resource type="PackedScene" uid="uid://rp1ypcgnjrye" path="res://escenas/BasuraLataAzul.tscn" id="1_sqyan"]
+[ext_resource type="PackedScene" uid="uid://ub6thv5n4ah3" path="res://escenas/BoteBasuraVerde.tscn" id="2_cb76m"]
+[ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/player.tscn" id="3_cb76m"]
+[ext_resource type="PackedScene" uid="uid://c23xucos1gueh" path="res://escenas/BoteBasuraRojo.tscn" id="4_qb6cn"]
+[ext_resource type="PackedScene" uid="uid://011710vm1xjq" path="res://escenas/BoteBasuraAzul.tscn" id="5_7shev"]
+
+[node name="Main" type="Node2D" unique_id=598044506]
+
+[node name="Basura" parent="." unique_id=1901333576 instance=ExtResource("1_sqyan")]
+position = Vector2(180, 148)
+
+[node name="Basura2" parent="." unique_id=698518027 instance=ExtResource("1_sqyan")]
+position = Vector2(440, -101)
+
+[node name="BotesBasura" parent="." unique_id=227257127 instance=ExtResource("2_cb76m")]
+position = Vector2(422, 904)
+
+[node name="Basura3" parent="." unique_id=1296471729 instance=ExtResource("1_sqyan")]
+position = Vector2(140, -304)
+
+[node name="Basura4" parent="." unique_id=969636866 instance=ExtResource("1_sqyan")]
+position = Vector2(535, -304)
+
+[node name="Player" parent="." unique_id=1767104653 instance=ExtResource("3_cb76m")]
+position = Vector2(140, 657)
+
+[node name="BotesBasura2" parent="." unique_id=400368534 instance=ExtResource("4_qb6cn")]
+position = Vector2(162, 905)
+
+[node name="BotesBasura3" parent="." unique_id=1269953355 instance=ExtResource("5_7shev")]
+position = Vector2(653, 904)

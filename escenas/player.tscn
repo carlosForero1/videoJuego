@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://coosb7exub8sv"]
+
+[ext_resource type="Texture2D" uid="uid://chh7ycdq04ks" path="res://imagenes/jugador-removebg-preview.png" id="1_esbpa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkt6c"]
+atlas = ExtResource("1_esbpa")
+region = Rect2(111, 0, 111, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7xnp"]
+atlas = ExtResource("1_esbpa")
+region = Rect2(222, 0, 111, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4kro"]
+atlas = ExtResource("1_esbpa")
+region = Rect2(333, 0, 111, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nxto"]
+atlas = ExtResource("1_esbpa")
+region = Rect2(444, 0, 111, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3yu4"]
+atlas = ExtResource("1_esbpa")
+region = Rect2(95, 248, 95, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4hsq"]
+atlas = ExtResource("1_esbpa")
+region = Rect2(190, 248, 95, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sacnx"]
+atlas = ExtResource("1_esbpa")
+region = Rect2(285, 248, 95, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1ak7"]
+atlas = ExtResource("1_esbpa")
+region = Rect2(380, 248, 95, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_533ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkt6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7xnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4kro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nxto")
+}],
+"loop": 1,
+"name": &"caminando",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3yu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4hsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sacnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ak7")
+}],
+"loop": 1,
+"name": &"saltando",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gd0y7"]
+radius = 22.0
+height = 102.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1767104653]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=696058005]
+sprite_frames = SubResource("SpriteFrames_533ip")
+animation = &"caminando"
+frame = 1
+frame_progress = 0.38632143
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1383276704]
+shape = SubResource("CapsuleShape2D_gd0y7")

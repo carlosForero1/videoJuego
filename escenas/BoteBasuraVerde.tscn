@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ub6thv5n4ah3"]
+
+[ext_resource type="Texture2D" uid="uid://2j76y8wpttmj" path="res://imagenes/Captura_de_pantalla_2026-04-27_165252-removebg-preview.png" id="1_f1t2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjpty"]
+size = Vector2(141, 46)
+
+[node name="BotesBasura" type="CharacterBody2D" unique_id=227257127]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=704562185]
+texture = ExtResource("1_f1t2s")
+region_enabled = true
+region_rect = Rect2(48, 16, 144, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=769622990]
+position = Vector2(0, -65)
+shape = SubResource("RectangleShape2D_pjpty")
