@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://o8g06688dxf7"]
+
+[ext_resource type="Script" uid="uid://b66pxbm5nkcki" path="res://scripts/escena_nivel.gd" id="1_amxxp"]
+[ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/player.tscn" id="2_3alid"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3alid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3alid"]
+size = Vector2(48, 767.99994)
+
+[node name="EscenaNivel" type="CharacterBody2D" unique_id=1461244772]
+script = ExtResource("1_amxxp")
+
+[node name="Player" parent="." unique_id=1767104653 instance=ExtResource("2_3alid")]
+position = Vector2(400, 500)
+
+[node name="Timer" type="Timer" parent="." unique_id=81262326]
+wait_time = 0.741
+autostart = true
+
+[node name="Puntaje" type="Label" parent="." unique_id=1174101648]
+offset_left = 616.0
+offset_right = 714.3243
+offset_bottom = 71.999985
+
+[node name="limite" type="StaticBody2D" parent="." unique_id=995224345]
+physics_material_override = SubResource("PhysicsMaterial_3alid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite" unique_id=468318050]
+position = Vector2(0, 304)
+shape = SubResource("RectangleShape2D_3alid")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="limite" unique_id=1586999121]
+position = Vector2(392, 576)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_3alid")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="limite" unique_id=1119393839]
+position = Vector2(800, 296)
+shape = SubResource("RectangleShape2D_3alid")

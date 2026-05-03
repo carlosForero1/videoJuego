@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://o8g06688dxf7"]
+
+[ext_resource type="Script" uid="uid://b66pxbm5nkcki" path="res://scripts/escena_nivel.gd" id="1_amxxp"]
+[ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/player.tscn" id="2_3alid"]
+[ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="3_yflb2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3alid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3alid"]
+size = Vector2(29, 624)
+
+[node name="EscenaNivel" type="Node2D" unique_id=884955888]
+script = ExtResource("1_amxxp")
+
+[node name="Player" parent="." unique_id=1767104653 instance=ExtResource("2_3alid")]
+position = Vector2(400, 500)
+
+[node name="Timer" type="Timer" parent="." unique_id=81262326]
+
+[node name="Puntaje" type="Label" parent="." unique_id=1174101648]
+offset_left = 616.0
+offset_right = 714.3243
+offset_bottom = 71.999985
+
+[node name="Instrucciones" type="Label" parent="." unique_id=72777133]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="limite" type="StaticBody2D" parent="." unique_id=995224345]
+physics_material_override = SubResource("PhysicsMaterial_3alid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite" unique_id=468318050]
+position = Vector2(1.5, 304)
+shape = SubResource("RectangleShape2D_3alid")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="limite" unique_id=1119393839]
+position = Vector2(800, 296)
+shape = SubResource("RectangleShape2D_3alid")
+
+[node name="Spawn" type="Node2D" parent="." unique_id=182909123]
+position = Vector2(400, -56)
+script = ExtResource("3_yflb2")

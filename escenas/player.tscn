@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://coosb7exub8sv"]
 
 [ext_resource type="Texture2D" uid="uid://chh7ycdq04ks" path="res://imagenes/jugador-removebg-preview.png" id="1_esbpa"]
+[ext_resource type="Script" uid="uid://drxv21a32rovq" path="res://scripts/player.gd" id="1_kkt6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kkt6c"]
 atlas = ExtResource("1_esbpa")
@@ -71,17 +72,30 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gd0y7"]
-radius = 22.0
-height = 102.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkt6c"]
+radius = 16.0
+height = 60.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j7xnp"]
+radius = 18.0
+height = 106.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1767104653]
+script = ExtResource("1_kkt6c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=696058005]
 sprite_frames = SubResource("SpriteFrames_533ip")
 animation = &"caminando"
-frame = 1
-frame_progress = 0.38632143
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1383276704]
-shape = SubResource("CapsuleShape2D_gd0y7")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1358204019]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396929295]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_kkt6c")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=542917262]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=320042135]
+shape = SubResource("CapsuleShape2D_j7xnp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
