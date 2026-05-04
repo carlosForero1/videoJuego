@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://mqp6vqbs7hpx" path="res://scripts/escena_nivel.gd" id="1_amxxp"]
 [ext_resource type="PackedScene" uid="uid://plgdgmrmihvg" path="res://escenas/basuras/comidas/manzanas/ManzanaVerde.tscn" id="2_3efce"]
 [ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/Player.tscn" id="2_g4h52"]
-[ext_resource type="PackedScene" uid="uid://boh10wckrgdk" path="res://escenas/basureros/basureroBlanco.tscn" id="2_sf6sp"]
-[ext_resource type="PackedScene" uid="uid://bdeekvcu5sxex" path="res://escenas/basureros/basureroNegro.tscn" id="3_g4h52"]
-[ext_resource type="PackedScene" uid="uid://curmbysejvc7n" path="res://escenas/basureros/basureroVerde.tscn" id="4_ju2q7"]
+[ext_resource type="PackedScene" uid="uid://boh10wckrgdk" path="res://escenas/basuras/otros/basureros/basureroBlanco.tscn" id="2_sf6sp"]
+[ext_resource type="PackedScene" uid="uid://dpgo25hha17r1" path="res://escenas/basuras/otros/servilletas/servilleta.tscn" id="2_wcx0v"]
+[ext_resource type="PackedScene" uid="uid://bdeekvcu5sxex" path="res://escenas/basuras/otros/basureros/basureroNegro.tscn" id="3_g4h52"]
+[ext_resource type="PackedScene" uid="uid://curmbysejvc7n" path="res://escenas/basuras/otros/basureros/basureroVerde.tscn" id="4_ju2q7"]
 [ext_resource type="PackedScene" uid="uid://cikjysnasvvmw" path="res://escenas/basuras/latas/LataRoja.tscn" id="5_g4h52"]
 [ext_resource type="Script" uid="uid://yg830vj62oqo" path="res://scripts/spawner.gd" id="6_ju2q7"]
 [ext_resource type="PackedScene" uid="uid://cd11ubp5g6ihk" path="res://escenas/basuras/botellas/BotellaVino.tscn" id="7_ckgf4"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cng5y1jx28k0u" path="res://escenas/basuras/comidas/manzanas/ManzanaRoja.tscn" id="13_vij12"]
 [ext_resource type="PackedScene" uid="uid://bcwashvxrimr5" path="res://escenas/basuras/comidas/agricolas/Rastrojo.tscn" id="14_wcx0v"]
 [ext_resource type="PackedScene" uid="uid://nteam2xpd5xf" path="res://escenas/basuras/comidas/agricolas/Bagazo.tscn" id="15_uo7tm"]
+[ext_resource type="PackedScene" uid="uid://dr10s5gq7eon6" path="res://escenas/basuras/otros/carton/Carton.tscn" id="16_uo7tm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3alid"]
 
@@ -73,7 +75,7 @@ collision_mask = 2
 [node name="Spawner" type="Node2D" parent="." unique_id=2046053099]
 position = Vector2(440, 16)
 script = ExtResource("6_ju2q7")
-basuras = Array[PackedScene]([ExtResource("11_0uaiv"), ExtResource("7_ek14j"), ExtResource("5_g4h52"), ExtResource("9_3efce"), ExtResource("7_ckgf4"), ExtResource("2_3efce"), ExtResource("13_vij12"), ExtResource("14_wcx0v"), ExtResource("15_uo7tm")])
+basuras = Array[PackedScene]([ExtResource("11_0uaiv"), ExtResource("7_ek14j"), ExtResource("5_g4h52"), ExtResource("9_3efce"), ExtResource("7_ckgf4"), ExtResource("2_3efce"), ExtResource("13_vij12"), ExtResource("14_wcx0v"), ExtResource("15_uo7tm"), ExtResource("16_uo7tm"), ExtResource("2_wcx0v")])
 
 [node name="VidasLabel" type="Label" parent="." unique_id=975428698]
 offset_left = 56.0
