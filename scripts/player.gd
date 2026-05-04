@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 var objeto_cargado = null
 var basura_cerca = null
+@onready var anim = $AnimatedSprite2D
 var contenedor_cerca = null
 
 func _physics_process(delta):
@@ -16,6 +17,14 @@ func _physics_process(delta):
 	
 	velocity.x = direction * speed
 	move_and_slide()
+	
+	if direction != 0:
+		anim.play("caminar")
+		
+		# Girar sprite según dirección
+		anim.flip_h = direction < 0
+	else:
+		anim.play("idle")
 
 # DETECTAR COSAS CERCA
 func _on_detector_body_entered(body):

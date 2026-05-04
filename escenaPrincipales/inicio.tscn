@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cirsxyvmvbebc"]
+
+[ext_resource type="Script" uid="uid://b354mfmtr4sx0" path="res://scripts/inicio.gd" id="1_dyjxu"]
+[ext_resource type="Texture2D" uid="uid://c312d1nye4ky2" path="res://imagenes/inicio.png" id="1_jovwk"]
+
+[node name="Inicio" type="Node2D" unique_id=1847452804]
+script = ExtResource("1_dyjxu")
+
+[node name="Inicio" type="Sprite2D" parent="." unique_id=935103780]
+position = Vector2(394.00003, 304.5)
+scale = Vector2(0.5607735, 0.57366484)
+texture = ExtResource("1_jovwk")
+
+[node name="botonInicio" type="Button" parent="." unique_id=2054814927]
+modulate = Color(1, 1, 1, 0)
+offset_left = 264.0
+offset_top = 296.0
+offset_right = 528.0
+offset_bottom = 368.0
+
+[node name="botonTutorial" type="Button" parent="." unique_id=1711217632]
+visible = false
+offset_left = 264.0
+offset_top = 392.0
+offset_right = 520.0
+offset_bottom = 472.0
+
+[connection signal="pressed" from="botonInicio" to="." method="_on_boton_inicio_pressed"]

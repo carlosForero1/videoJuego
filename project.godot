@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="seriuosGame"
-run/main_scene="uid://o8g06688dxf7"
+run/main_scene="uid://cirsxyvmvbebc"
 config/features=PackedStringArray("4.7", "Forward Plus")
+
+[autoload]
+
+GameManager="*uid://c3n562jhn1yac"
 
 [display]
 

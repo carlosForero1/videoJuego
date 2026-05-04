@@ -4,20 +4,19 @@
 [ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="2_mmhb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jogjj"]
-size = Vector2(64.00001, 80)
+size = Vector2(32.00001, 32)
 
 [node name="Casca" type="CharacterBody2D" unique_id=1273992583]
 script = ExtResource("2_mmhb7")
 tipo = "verde"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1501022080]
-position = Vector2(-2.7105054e-20, 0)
-scale = Vector2(0.55263156, 0.5588235)
+scale = Vector2(0.22076024, 0.22678019)
 texture = ExtResource("1_avnky")
 region_enabled = true
 region_rect = Rect2(472, 128, 144, 152)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=51605079]
-position = Vector2(-9.53674e-07, 0)
+position = Vector2(9.536743e-07, 0)
 scale = Vector2(0.9999997, 1)
 shape = SubResource("RectangleShape2D_jogjj")

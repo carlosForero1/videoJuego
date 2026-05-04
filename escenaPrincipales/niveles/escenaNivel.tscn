@@ -1,22 +1,15 @@
 [gd_scene format=3 uid="uid://o8g06688dxf7"]
 
 [ext_resource type="Script" uid="uid://mqp6vqbs7hpx" path="res://scripts/escena_nivel.gd" id="1_amxxp"]
-[ext_resource type="PackedScene" uid="uid://plgdgmrmihvg" path="res://escenas/basuras/comidas/manzanas/ManzanaVerde.tscn" id="2_3efce"]
 [ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/Player.tscn" id="2_g4h52"]
 [ext_resource type="PackedScene" uid="uid://boh10wckrgdk" path="res://escenas/basuras/otros/basureros/basureroBlanco.tscn" id="2_sf6sp"]
-[ext_resource type="PackedScene" uid="uid://dpgo25hha17r1" path="res://escenas/basuras/otros/servilletas/servilleta.tscn" id="2_wcx0v"]
 [ext_resource type="PackedScene" uid="uid://bdeekvcu5sxex" path="res://escenas/basuras/otros/basureros/basureroNegro.tscn" id="3_g4h52"]
 [ext_resource type="PackedScene" uid="uid://curmbysejvc7n" path="res://escenas/basuras/otros/basureros/basureroVerde.tscn" id="4_ju2q7"]
 [ext_resource type="PackedScene" uid="uid://cikjysnasvvmw" path="res://escenas/basuras/latas/LataRoja.tscn" id="5_g4h52"]
 [ext_resource type="Script" uid="uid://yg830vj62oqo" path="res://scripts/spawner.gd" id="6_ju2q7"]
-[ext_resource type="PackedScene" uid="uid://cd11ubp5g6ihk" path="res://escenas/basuras/botellas/BotellaVino.tscn" id="7_ckgf4"]
-[ext_resource type="PackedScene" uid="uid://rp1ypcgnjrye" path="res://escenas/basuras/latas/LataAzul.tscn" id="7_ek14j"]
-[ext_resource type="PackedScene" uid="uid://bgm7buslwhxki" path="res://escenas/basuras/latas/LataAmarilla.tscn" id="9_3efce"]
-[ext_resource type="PackedScene" uid="uid://b6knjb4gn5lyn" path="res://escenas/basuras/botellas/BotellaPlastico.tscn" id="11_0uaiv"]
 [ext_resource type="PackedScene" uid="uid://cng5y1jx28k0u" path="res://escenas/basuras/comidas/manzanas/ManzanaRoja.tscn" id="13_vij12"]
-[ext_resource type="PackedScene" uid="uid://bcwashvxrimr5" path="res://escenas/basuras/comidas/agricolas/Rastrojo.tscn" id="14_wcx0v"]
-[ext_resource type="PackedScene" uid="uid://nteam2xpd5xf" path="res://escenas/basuras/comidas/agricolas/Bagazo.tscn" id="15_uo7tm"]
 [ext_resource type="PackedScene" uid="uid://dr10s5gq7eon6" path="res://escenas/basuras/otros/carton/Carton.tscn" id="16_uo7tm"]
+[ext_resource type="Texture2D" uid="uid://d02k28pvdvm10" path="res://imagenes/Gemini_Generated_Image_e31g2ve31g2ve31g.png" id="18_gbfpm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3alid"]
 
@@ -35,10 +28,12 @@ offset_left = 616.0
 offset_top = 40.0
 offset_right = 714.3243
 offset_bottom = 111.999985
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="limite" type="StaticBody2D" parent="." unique_id=995224345]
-collision_layer = 3
-collision_mask = 3
+disable_mode = 1
+collision_layer = 255
+collision_mask = 255
 physics_material_override = SubResource("PhysicsMaterial_3alid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="limite" unique_id=468318050]
@@ -62,7 +57,7 @@ position = Vector2(48, 544)
 collision_layer = 2
 collision_mask = 2
 
-[node name="BasureroNegro" parent="." unique_id=916726562 groups=["contenedor"] instance=ExtResource("3_g4h52")]
+[node name="BasureroNegro" parent="." unique_id=916726562 instance=ExtResource("3_g4h52")]
 position = Vector2(144, 544)
 collision_layer = 2
 collision_mask = 2
@@ -75,12 +70,19 @@ collision_mask = 2
 [node name="Spawner" type="Node2D" parent="." unique_id=2046053099]
 position = Vector2(440, 16)
 script = ExtResource("6_ju2q7")
-basuras = Array[PackedScene]([ExtResource("11_0uaiv"), ExtResource("7_ek14j"), ExtResource("5_g4h52"), ExtResource("9_3efce"), ExtResource("7_ckgf4"), ExtResource("2_3efce"), ExtResource("13_vij12"), ExtResource("14_wcx0v"), ExtResource("15_uo7tm"), ExtResource("16_uo7tm"), ExtResource("2_wcx0v")])
+basuras = Array[PackedScene]([ExtResource("5_g4h52"), ExtResource("13_vij12"), ExtResource("16_uo7tm")])
 
 [node name="VidasLabel" type="Label" parent="." unique_id=975428698]
 offset_left = 56.0
 offset_top = 56.0
 offset_right = 96.0
 offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="GeminiGeneratedImageE31g2Ve31g2Ve31g" type="Sprite2D" parent="." unique_id=517058181]
+z_index = -1
+position = Vector2(480.00003, 280.00003)
+scale = Vector2(0.9176136, 0.7552083)
+texture = ExtResource("18_gbfpm")
 
 [connection signal="timeout" from="Timer" to="Spawner" method="_on_timer_timeout"]

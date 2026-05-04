@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://citvibshi2x4h"]
+
+[ext_resource type="Script" uid="uid://5ueqpgmfkixb" path="res://scripts/juego_terminado.gd" id="1_dial2"]
+[ext_resource type="Texture2D" uid="uid://cg7ogby7o1rln" path="res://imagenes/pantalla juego completado.png" id="1_mbfk1"]
+
+[node name="JuegoTerminado" type="Node2D" unique_id=1759675116]
+script = ExtResource("1_dial2")
+
+[node name="PantallaJuegoCompletado" type="Sprite2D" parent="." unique_id=2051050073]
+position = Vector2(402.99997, 302.25003)
+scale = Vector2(0.5704419, 0.54834247)
+texture = ExtResource("1_mbfk1")
+
+[node name="Button" type="Button" parent="." unique_id=1602841110]
+modulate = Color(1, 1, 1, 0)
+offset_left = -8.0
+offset_right = 832.0
+offset_bottom = 592.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

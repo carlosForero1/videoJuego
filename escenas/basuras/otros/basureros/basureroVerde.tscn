@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://curmbysejvc7n"]
 
 [ext_resource type="Texture2D" uid="uid://bculn7nbtyqjy" path="res://imagenes/Gemini_Generated_Image_fwrhthfwrhthfwrh-removebg-preview.png" id="1_6mnok"]
-[ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="1_orqub"]
+[ext_resource type="Script" uid="uid://cpwmw0atp0pkq" path="res://scripts/contenedor.gd" id="1_m03e0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4jh7k"]
 size = Vector2(42, 66)
 
 [node name="BasureroBlanco" type="CharacterBody2D" unique_id=946966745 groups=["contenedor"]]
-script = ExtResource("1_orqub")
+script = ExtResource("1_m03e0")
 tipo = "verde"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334802968]

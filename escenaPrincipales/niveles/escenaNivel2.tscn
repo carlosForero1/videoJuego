@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dkbo75khfkyvd"]
+
+[ext_resource type="Script" uid="uid://mqp6vqbs7hpx" path="res://scripts/escena_nivel.gd" id="1_xg4y7"]
+[ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/Player.tscn" id="2_6oeyu"]
+[ext_resource type="PackedScene" uid="uid://boh10wckrgdk" path="res://escenas/basuras/otros/basureros/basureroBlanco.tscn" id="3_k2kcu"]
+[ext_resource type="PackedScene" uid="uid://bdeekvcu5sxex" path="res://escenas/basuras/otros/basureros/basureroNegro.tscn" id="4_u3x3r"]
+[ext_resource type="PackedScene" uid="uid://curmbysejvc7n" path="res://escenas/basuras/otros/basureros/basureroVerde.tscn" id="5_isfka"]
+[ext_resource type="Script" uid="uid://yg830vj62oqo" path="res://scripts/spawner.gd" id="6_l4ofe"]
+[ext_resource type="PackedScene" uid="uid://b6knjb4gn5lyn" path="res://escenas/basuras/botellas/BotellaPlastico.tscn" id="7_wp7jt"]
+[ext_resource type="PackedScene" uid="uid://cikjysnasvvmw" path="res://escenas/basuras/latas/LataRoja.tscn" id="9_mcrn5"]
+[ext_resource type="PackedScene" uid="uid://bgm7buslwhxki" path="res://escenas/basuras/latas/LataAmarilla.tscn" id="10_pnc4r"]
+[ext_resource type="PackedScene" uid="uid://cng5y1jx28k0u" path="res://escenas/basuras/comidas/manzanas/ManzanaRoja.tscn" id="13_vwlsx"]
+[ext_resource type="PackedScene" uid="uid://bcwashvxrimr5" path="res://escenas/basuras/comidas/agricolas/Rastrojo.tscn" id="14_5kauo"]
+[ext_resource type="PackedScene" uid="uid://dpgo25hha17r1" path="res://escenas/basuras/otros/servilletas/servilleta.tscn" id="17_4thy4"]
+[ext_resource type="Texture2D" uid="uid://j7phgyc7ceie" path="res://imagenes/Gemini_Generated_Image_240wzi240wzi240w.png" id="18_xg4y7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3alid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3alid"]
+size = Vector2(48, 1176)
+
+[node name="EscenaNivel" type="Node2D" unique_id=1030953870]
+script = ExtResource("1_xg4y7")
+
+[node name="Timer" type="Timer" parent="." unique_id=81262326]
+wait_time = 2.0
+autostart = true
+
+[node name="PuntajeLabel" type="Label" parent="." unique_id=1174101648]
+offset_left = 616.0
+offset_top = 40.0
+offset_right = 714.3243
+offset_bottom = 111.999985
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="limite" type="StaticBody2D" parent="." unique_id=995224345]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_3alid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite" unique_id=468318050]
+position = Vector2(0, 336)
+shape = SubResource("RectangleShape2D_3alid")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="limite" unique_id=1586999121]
+position = Vector2(612, 600)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_3alid")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="limite" unique_id=1119393839]
+position = Vector2(800, 320)
+shape = SubResource("RectangleShape2D_3alid")
+
+[node name="Player" parent="." unique_id=835021892 instance=ExtResource("2_6oeyu")]
+position = Vector2(408, 520)
+
+[node name="BasureroBlanco" parent="." unique_id=211628876 instance=ExtResource("3_k2kcu")]
+position = Vector2(48, 544)
+collision_layer = 2
+collision_mask = 2
+
+[node name="BasureroNegro" parent="." unique_id=916726562 instance=ExtResource("4_u3x3r")]
+position = Vector2(144, 544)
+collision_layer = 2
+collision_mask = 2
+
+[node name="BasureroVerde" parent="." unique_id=1005110561 instance=ExtResource("5_isfka")]
+position = Vector2(240, 544)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Spawner" type="Node2D" parent="." unique_id=2046053099]
+position = Vector2(440, 16)
+script = ExtResource("6_l4ofe")
+basuras = Array[PackedScene]([ExtResource("7_wp7jt"), ExtResource("9_mcrn5"), ExtResource("10_pnc4r"), ExtResource("13_vwlsx"), ExtResource("14_5kauo"), ExtResource("17_4thy4")])
+
+[node name="VidasLabel" type="Label" parent="." unique_id=975428698]
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 96.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="GeminiGeneratedImage240Wzi240Wzi240w" type="Sprite2D" parent="." unique_id=196200426]
+z_index = -2
+position = Vector2(388.25, 368)
+scale = Vector2(1.0174129, 1)
+texture = ExtResource("18_xg4y7")
+
+[connection signal="timeout" from="Timer" to="Spawner" method="_on_timer_timeout"]
