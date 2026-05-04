@@ -32,7 +32,6 @@ func _on_detector_body_exited(body):
 	if body == contenedor_cerca:
 		contenedor_cerca = null
 
-# 👇 AQUÍ VA TU CÓDIGO
 func _input(event):
 	if event.is_action_pressed("recoger"):
 		
@@ -40,16 +39,12 @@ func _input(event):
 		if objeto_cargado == null and basura_cerca != null:
 			objeto_cargado = basura_cerca
 			objeto_cargado.visible = false
-			print("Recogiste basura tipo: " + objeto_cargado.tipo)
-		
+			
 		# SOLTAR
 		elif objeto_cargado != null and contenedor_cerca != null:
-			print("Entre a esto")
-			if objeto_cargado.tipo == "basura":
-				print("Correcto")
+			if objeto_cargado.tipo == contenedor_cerca.tipo:
 				get_parent().sumar_punto()
 			else:
-				print("Incorrecto")
 				get_parent().perder_vida()
 			
 			objeto_cargado.queue_free()

@@ -9,6 +9,7 @@ height = 80.0
 
 [node name="BotellaVino" type="CharacterBody2D" unique_id=695317040]
 script = ExtResource("2_5srei")
+tipo = "blanco"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=175164715]
 position = Vector2(1.9073486e-06, -1.1444092e-05)

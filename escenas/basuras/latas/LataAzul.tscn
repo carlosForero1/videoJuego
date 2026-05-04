@@ -8,6 +8,7 @@ size = Vector2(32, 56)
 
 [node name="Basura" type="CharacterBody2D" unique_id=1289863611]
 script = ExtResource("1_0hf1s")
+tipo = "blanco"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1173120549]
 position = Vector2(0, -1.9999993)

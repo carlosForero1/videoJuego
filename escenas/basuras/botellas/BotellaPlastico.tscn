@@ -9,6 +9,7 @@ height = 64.0
 
 [node name="BotellaPlastico" type="CharacterBody2D" unique_id=5813716]
 script = ExtResource("1_nu6ic")
+tipo = "blanco"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1758713463]
 scale = Vector2(0.45454547, 0.40909088)

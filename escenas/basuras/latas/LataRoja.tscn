@@ -1,41 +1,14 @@
 [gd_scene format=3 uid="uid://cikjysnasvvmw"]
 
 [ext_resource type="Texture2D" uid="uid://cbyx0ck0hi7et" path="res://imagenes/Captura_de_pantalla_2026-04-27_165130-removebg-preview.png" id="1_vswqa"]
-
-[sub_resource type="GDScript" id="GDScript_yflb2"]
-script/source = "extends CharacterBody2D
-
-@export var speed = 150
-var es_reciclable = false
-var nombre = \"\"
-
-@onready var label = $Label
-@onready var sprite: Sprite2D = $Sprite2D
-func configurar(_nombre, reciclable, dificultad):
-	nombre = _nombre
-	es_reciclable = reciclable
-
-
-	# Mostrar texto
-	if label:
-		label.text = nombre
-
-	speed = 150 + (dificultad * 20)
-
-func _physics_process(delta):
-	velocity.y = speed
-	move_and_slide()
-
-	# Eliminar si sale de pantalla
-	if position.y > 700:
-		queue_free()
-"
+[ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="1_xlj2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43pb5"]
 size = Vector2(32, 56)
 
 [node name="Basura" type="CharacterBody2D" unique_id=1289863611]
-script = SubResource("GDScript_yflb2")
+script = ExtResource("1_xlj2g")
+tipo = "blanco"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1173120549]
 position = Vector2(0, -1.9999993)

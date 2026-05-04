@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chh7ycdq04ks" path="res://imagenes/jugador-removebg-preview.png" id="1_q3yk6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kclba"]
-radius = 48.0
+radius = 24.0
 height = 128.0
 
 [node name="Player" type="CharacterBody2D" unique_id=835021892]
@@ -16,6 +16,7 @@ region_enabled = true
 region_rect = Rect2(128, 136, 48, 104)
 
 [node name="Detector" type="Area2D" parent="." unique_id=1789613890]
+collision_mask = 4294967295
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=1020404800]
 shape = SubResource("CapsuleShape2D_kclba")
