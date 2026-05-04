@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://plgdgmrmihvg"]
+
+[ext_resource type="Texture2D" uid="uid://dl0u1idev5dip" path="res://imagenes/descarga-removebg-preview.png" id="1_4lg8q"]
+[ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="2_1rrtt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lg8q"]
+size = Vector2(48, 40)
+
+[node name="ManzanaVerde" type="CharacterBody2D" unique_id=1638987679]
+script = ExtResource("2_1rrtt")
+tipo = "verde"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1589062851]
+position = Vector2(-9.536743e-07, 0)
+scale = Vector2(0.74999994, 0.6)
+texture = ExtResource("1_4lg8q")
+region_enabled = true
+region_rect = Rect2(96, 104, 64, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2059297441]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_4lg8q")

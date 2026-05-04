@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c8uixc2cxbdc0"]
+
+[ext_resource type="Texture2D" uid="uid://qexaxndeuk3q" path="res://imagenes/a9a4954c-6213-44a8-bd6c-ab1cdb34486a-removebg-preview.png" id="1_iy3d7"]
+[ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="1_uwhrg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iy3d7"]
+radius = 32.0
+
+[node name="Casca" type="CharacterBody2D" unique_id=1273992583]
+script = ExtResource("1_uwhrg")
+tipo = "verde"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=51605079]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_iy3d7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1501022080]
+position = Vector2(-7.6293945e-06, 1.9073486e-06)
+scale = Vector2(0.55263156, 0.5588235)
+texture = ExtResource("1_iy3d7")
+region_enabled = true
+region_rect = Rect2(56, 144, 152, 136)

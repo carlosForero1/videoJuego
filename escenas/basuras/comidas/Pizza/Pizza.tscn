@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dkpsxvy3c00ka"]
+
+[ext_resource type="Texture2D" uid="uid://c2ajpk8mmprvl" path="res://imagenes/descarga-removebg-preview (1).png" id="1_5ii02"]
+[ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="2_ormw8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ii02"]
+size = Vector2(48, 64)
+
+[node name="Pizza" type="CharacterBody2D" unique_id=674239323]
+script = ExtResource("2_ormw8")
+tipo = "verde"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=574188610]
+position = Vector2(-1.1368684e-13, 0)
+scale = Vector2(0.5549305, 0.49223086)
+texture = ExtResource("1_5ii02")
+region_enabled = true
+region_rect = Rect2(56, 48, 112, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2078825488]
+shape = SubResource("RectangleShape2D_5ii02")
