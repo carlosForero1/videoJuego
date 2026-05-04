@@ -21,6 +21,10 @@ window/size/viewport_height=600
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+contenedor=""
+
 [input]
 
 recoger={

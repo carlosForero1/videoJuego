@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2j76y8wpttmj"
-path="res://.godot/imported/Captura_de_pantalla_2026-04-27_165252-removebg-preview.png-b54672635b6d321b5f0225a126aade4d.ctex"
+uid="uid://dh4f2wffmrq41"
+path="res://.godot/imported/botellas-removebg-preview.png-97f3d6d089c2c80771b44e63f03f852f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagenes/Captura_de_pantalla_2026-04-27_165252-removebg-preview.png"
-dest_files=["res://.godot/imported/Captura_de_pantalla_2026-04-27_165252-removebg-preview.png-b54672635b6d321b5f0225a126aade4d.ctex"]
+source_file="res://imagenes/botellas-removebg-preview.png"
+dest_files=["res://.godot/imported/botellas-removebg-preview.png-97f3d6d089c2c80771b44e63f03f852f.ctex"]
 
 [params]
 

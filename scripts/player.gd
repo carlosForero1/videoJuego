@@ -1,24 +1,56 @@
 extends CharacterBody2D
 
-@export var speed = 600
+@export var speed = 400
+
+var objeto_cargado = null
+var basura_cerca = null
+var contenedor_cerca = null
 
 func _physics_process(delta):
-	var direction = Vector2.ZERO
-
+	var direction = 0
+	
 	if Input.is_action_pressed("derecha"):
-		direction.x += 1
+		direction += 1
 	if Input.is_action_pressed("izquierda"):
-		direction.x -= 1
-
-	velocity.x = direction.x * speed
+		direction -= 1
+	
+	velocity.x = direction * speed
 	move_and_slide()
 
+# DETECTAR COSAS CERCA
+func _on_detector_body_entered(body):
+	if body.is_in_group("basura"):
+		basura_cerca = body
+	
+	if body.is_in_group("contenedor"):
+		contenedor_cerca = body
 
-func _on_area_2d_body_entered(body):
-	if body.has_method("configurar"):  # asegurarse que es basura
-		if body.es_reciclable:
-			print("♻️ Correcto")
-		else:
-			print("🚫 Incorrecto")
+func _on_detector_body_exited(body):
+	if body == basura_cerca:
+		basura_cerca = null
+	
+	if body == contenedor_cerca:
+		contenedor_cerca = null
+
+# 👇 AQUÍ VA TU CÓDIGO
+func _input(event):
+	if event.is_action_pressed("recoger"):
 		
-		body.queue_free()  
+		# RECOGER
+		if objeto_cargado == null and basura_cerca != null:
+			objeto_cargado = basura_cerca
+			objeto_cargado.visible = false
+			print("Recogiste basura tipo: " + objeto_cargado.tipo)
+		
+		# SOLTAR
+		elif objeto_cargado != null and contenedor_cerca != null:
+			print("Entre a esto")
+			if objeto_cargado.tipo == "basura":
+				print("Correcto")
+				get_parent().sumar_punto()
+			else:
+				print("Incorrecto")
+				get_parent().perder_vida()
+			
+			objeto_cargado.queue_free()
+			objeto_cargado = null

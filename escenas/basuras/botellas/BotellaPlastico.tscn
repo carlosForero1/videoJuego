@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b6knjb4gn5lyn"]
+
+[ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="1_nu6ic"]
+[ext_resource type="Texture2D" uid="uid://dh4f2wffmrq41" path="res://imagenes/botellas-removebg-preview.png" id="1_wamya"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wamya"]
+radius = 16.0
+height = 64.0
+
+[node name="BotellaPlastico" type="CharacterBody2D" unique_id=5813716]
+script = ExtResource("1_nu6ic")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1758713463]
+scale = Vector2(0.45454547, 0.40909088)
+texture = ExtResource("1_wamya")
+region_enabled = true
+region_rect = Rect2(400, 24, 88, 176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2129140282]
+shape = SubResource("CapsuleShape2D_wamya")

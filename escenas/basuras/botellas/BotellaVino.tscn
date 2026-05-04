@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cd11ubp5g6ihk"]
+
+[ext_resource type="Texture2D" uid="uid://dh4f2wffmrq41" path="res://imagenes/botellas-removebg-preview.png" id="1_4bxn3"]
+[ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="2_5srei"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5srei"]
+radius = 16.0
+height = 80.0
+
+[node name="BotellaVino" type="CharacterBody2D" unique_id=695317040]
+script = ExtResource("2_5srei")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=175164715]
+position = Vector2(1.9073486e-06, -1.1444092e-05)
+scale = Vector2(0.3888889, 0.4090909)
+texture = ExtResource("1_4bxn3")
+region_enabled = true
+region_rect = Rect2(24, 24, 72, 176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1277360349]
+shape = SubResource("CapsuleShape2D_5srei")

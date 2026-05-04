@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://rp1ypcgnjrye"]
+
+[ext_resource type="Script" uid="uid://cernmyej3g6cj" path="res://scripts/Basura.gd" id="1_0hf1s"]
+[ext_resource type="Texture2D" uid="uid://cbyx0ck0hi7et" path="res://imagenes/Captura_de_pantalla_2026-04-27_165130-removebg-preview.png" id="1_5t5eu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43pb5"]
+size = Vector2(32, 56)
+
+[node name="Basura" type="CharacterBody2D" unique_id=1289863611]
+script = ExtResource("1_0hf1s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1173120549]
+position = Vector2(0, -1.9999993)
+scale = Vector2(0.28125, 0.24074073)
+texture = ExtResource("1_5t5eu")
+region_enabled = true
+region_rect = Rect2(16, 56, 128, 216)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1067374846]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_43pb5")

@@ -1,42 +1,80 @@
 [gd_scene format=3 uid="uid://o8g06688dxf7"]
 
-[ext_resource type="Script" uid="uid://b66pxbm5nkcki" path="res://scripts/escena_nivel.gd" id="1_amxxp"]
-[ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/player.tscn" id="2_3alid"]
+[ext_resource type="Script" uid="uid://mqp6vqbs7hpx" path="res://scripts/escena_nivel.gd" id="1_amxxp"]
+[ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/Player.tscn" id="2_g4h52"]
+[ext_resource type="PackedScene" uid="uid://boh10wckrgdk" path="res://escenas/basureros/basureroBlanco.tscn" id="2_sf6sp"]
+[ext_resource type="PackedScene" uid="uid://bdeekvcu5sxex" path="res://escenas/basureros/basureroNegro.tscn" id="3_g4h52"]
+[ext_resource type="PackedScene" uid="uid://curmbysejvc7n" path="res://escenas/basureros/basureroVerde.tscn" id="4_ju2q7"]
+[ext_resource type="PackedScene" uid="uid://cikjysnasvvmw" path="res://escenas/basuras/latas/LataRoja.tscn" id="5_g4h52"]
+[ext_resource type="Script" uid="uid://yg830vj62oqo" path="res://scripts/spawner.gd" id="6_ju2q7"]
+[ext_resource type="PackedScene" uid="uid://cd11ubp5g6ihk" path="res://escenas/basuras/botellas/BotellaVino.tscn" id="7_ckgf4"]
+[ext_resource type="PackedScene" uid="uid://rp1ypcgnjrye" path="res://escenas/basuras/latas/LataAzul.tscn" id="7_ek14j"]
+[ext_resource type="PackedScene" uid="uid://bgm7buslwhxki" path="res://escenas/basuras/latas/LataAmarilla.tscn" id="9_3efce"]
+[ext_resource type="PackedScene" uid="uid://b6knjb4gn5lyn" path="res://escenas/basuras/botellas/BotellaPlastico.tscn" id="11_0uaiv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3alid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3alid"]
-size = Vector2(48, 767.99994)
+size = Vector2(48, 1176)
 
-[node name="EscenaNivel" type="CharacterBody2D" unique_id=1461244772]
+[node name="EscenaNivel" type="Node2D" unique_id=1030953870]
 script = ExtResource("1_amxxp")
 
 [node name="Timer" type="Timer" parent="." unique_id=81262326]
-wait_time = 1.5
+wait_time = 2.0
 autostart = true
 
-[node name="Player" parent="." unique_id=1767104653 instance=ExtResource("2_3alid")]
-position = Vector2(400, 500)
-
-[node name="Puntaje" type="Label" parent="." unique_id=1174101648]
+[node name="PuntajeLabel" type="Label" parent="." unique_id=1174101648]
 offset_left = 616.0
+offset_top = 40.0
 offset_right = 714.3243
-offset_bottom = 71.999985
+offset_bottom = 111.999985
 
 [node name="limite" type="StaticBody2D" parent="." unique_id=995224345]
+collision_layer = 2
+collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_3alid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="limite" unique_id=468318050]
-position = Vector2(0, 304)
+position = Vector2(0, 336)
 shape = SubResource("RectangleShape2D_3alid")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="limite" unique_id=1586999121]
-position = Vector2(408, 600)
+position = Vector2(612, 600)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_3alid")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="limite" unique_id=1119393839]
-position = Vector2(800, 296)
+position = Vector2(800, 320)
 shape = SubResource("RectangleShape2D_3alid")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Player" parent="." unique_id=835021892 instance=ExtResource("2_g4h52")]
+position = Vector2(408, 520)
+
+[node name="BasureroBlanco" parent="." unique_id=211628876 instance=ExtResource("2_sf6sp")]
+position = Vector2(48, 544)
+collision_layer = 2
+collision_mask = 2
+
+[node name="BasureroNegro" parent="." unique_id=916726562 instance=ExtResource("3_g4h52")]
+position = Vector2(144, 544)
+collision_layer = 2
+collision_mask = 2
+
+[node name="BasureroVerde" parent="." unique_id=1005110561 instance=ExtResource("4_ju2q7")]
+position = Vector2(240, 544)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Spawner" type="Node2D" parent="." unique_id=2046053099]
+position = Vector2(472, 72)
+script = ExtResource("6_ju2q7")
+basuras = Array[PackedScene]([ExtResource("11_0uaiv"), ExtResource("7_ek14j"), ExtResource("5_g4h52"), ExtResource("9_3efce"), ExtResource("7_ckgf4")])
+
+[node name="VidasLabel" type="Label" parent="." unique_id=975428698]
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 96.0
+offset_bottom = 79.0
+
+[connection signal="timeout" from="Timer" to="Spawner" method="_on_timer_timeout"]

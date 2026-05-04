@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://boh10wckrgdk"]
+
+[ext_resource type="Texture2D" uid="uid://bculn7nbtyqjy" path="res://imagenes/Gemini_Generated_Image_fwrhthfwrhthfwrh-removebg-preview.png" id="1_4jh7k"]
+[ext_resource type="Script" uid="uid://cpwmw0atp0pkq" path="res://scripts/contenedor.gd" id="1_6uc8b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jh7k"]
+size = Vector2(42, 66)
+
+[node name="BasureroBlanco" type="CharacterBody2D" unique_id=377084350 groups=["contenedor"]]
+script = ExtResource("1_6uc8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334802968]
+scale = Vector2(0.35, 0.375)
+texture = ExtResource("1_4jh7k")
+region_enabled = true
+region_rect = Rect2(72, 88, 160, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=662727561]
+shape = SubResource("RectangleShape2D_4jh7k")

@@ -1,55 +1,32 @@
-extends CharacterBody2D
-
-@export var basura_scene: PackedScene
-const BASURA = preload("uid://rp1ypcgnjrye")
+extends Node2D
 
 var puntos = 0
-var dificultad = 1
-
-@onready var label = $Puntaje
+var vidas = 3
 
 func _ready():
-	randomize()
 	actualizar_ui()
 
-func _on_timer_timeout():
-	spawn_basura()
-
-func spawn_basura():
-	var b = BASURA.instantiate()
-
-	b.position.x = randi_range(50, 750)
-	b.position.y = 0
-
-	# Tipos de basura
-	var tipos = [
-		{"nombre": "Botella", "reciclable": true},
-		{"nombre": "Vidrio", "reciclable": true},
-		{"nombre": "Orgánico", "reciclable": false},
-		{"nombre": "Pilas", "reciclable": false}
-	]
-
-	var elegido = tipos.pick_random()
-
-	b.configurar(elegido["nombre"], elegido["reciclable"], dificultad)
-
-	add_child(b)
-
-func sumar_puntos(valor):
-	puntos += valor
+# SUMAR PUNTOS
+func sumar_punto():
+	puntos += 1
 	actualizar_ui()
-	verificar_estado()
+	print("Puntos:", puntos)
 
+# PERDER VIDA
+func perder_vida():
+	vidas -= 1
+	actualizar_ui()
+	print("Vidas:", vidas)
+	
+	if vidas <= 0:
+		game_over()
+
+# ACTUALIZAR TEXTO EN PANTALLA
 func actualizar_ui():
-	label.text = "Puntos: " + str(puntos)
+	$PuntajeLabel.text = "Puntos: " + str(puntos)
+	$VidasLabel.text = "Vidas: " + str(vidas)
 
-func verificar_estado():
-	if puntos >= 100:
-		print("🎉 GANASTE")
-		get_tree().paused = true
-	elif puntos < 0:
-		print("💀 PERDISTE")
-		get_tree().paused = true
-
-func aumentar_dificultad():
-	dificultad += 1
+# GAME OVER
+func game_over():
+	print("GAME OVER")
+	get_tree().paused = true
