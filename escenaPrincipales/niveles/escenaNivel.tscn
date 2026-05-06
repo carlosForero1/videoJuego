@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://o8g06688dxf7"]
 
 [ext_resource type="Script" uid="uid://mqp6vqbs7hpx" path="res://scripts/escena_nivel.gd" id="1_amxxp"]
-[ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/Player.tscn" id="2_g4h52"]
+[ext_resource type="PackedScene" uid="uid://coosb7exub8sv" path="res://escenas/basuras/Player.tscn" id="2_g4h52"]
 [ext_resource type="PackedScene" uid="uid://boh10wckrgdk" path="res://escenas/basuras/otros/basureros/basureroBlanco.tscn" id="2_sf6sp"]
 [ext_resource type="PackedScene" uid="uid://bdeekvcu5sxex" path="res://escenas/basuras/otros/basureros/basureroNegro.tscn" id="3_g4h52"]
 [ext_resource type="PackedScene" uid="uid://curmbysejvc7n" path="res://escenas/basuras/otros/basureros/basureroVerde.tscn" id="4_ju2q7"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d2hvjxql2v05a"]
+
+[ext_resource type="AudioStream" uid="uid://dxqxn25kq45g2" path="res://imagenes/freesound_community-bosque-66633.mp3" id="1_idgnc"]
+
+[node name="Sonido" type="Node2D" unique_id=2009800868]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=701558424]
+stream = ExtResource("1_idgnc")
+autoplay = true

@@ -48,12 +48,15 @@ func _input(event):
 		if objeto_cargado == null and basura_cerca != null:
 			objeto_cargado = basura_cerca
 			objeto_cargado.visible = false
-			
+
+
 		# SOLTAR
 		elif objeto_cargado != null and contenedor_cerca != null:
 			if objeto_cargado.tipo == contenedor_cerca.tipo:
 				get_parent().sumar_punto()
+				$sonidoCorrecto.play()
 			else:
+				$sonidoIncorrecto.play()
 				get_parent().perder_vida()
 			
 			objeto_cargado.queue_free()

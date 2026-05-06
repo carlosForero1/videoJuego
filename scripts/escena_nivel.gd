@@ -12,7 +12,7 @@ func sumar_punto():
 	puntos += 1
 	actualizar_ui()
 	
-	if puntos >= 1:
+	if puntos >= 5:
 		GameManager.nivel += 1
 		print(GameManager.nivel)
 		if GameManager.nivel == 4:

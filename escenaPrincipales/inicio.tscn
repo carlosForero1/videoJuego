@@ -19,10 +19,11 @@ offset_right = 528.0
 offset_bottom = 368.0
 
 [node name="botonTutorial" type="Button" parent="." unique_id=1711217632]
-visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = 264.0
 offset_top = 392.0
 offset_right = 520.0
 offset_bottom = 472.0
 
 [connection signal="pressed" from="botonInicio" to="." method="_on_boton_inicio_pressed"]
+[connection signal="pressed" from="botonTutorial" to="." method="_on_boton_tutorial_pressed"]
