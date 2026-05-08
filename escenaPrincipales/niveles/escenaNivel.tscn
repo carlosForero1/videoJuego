@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://curmbysejvc7n" path="res://escenas/basuras/otros/basureros/basureroVerde.tscn" id="4_ju2q7"]
 [ext_resource type="PackedScene" uid="uid://cikjysnasvvmw" path="res://escenas/basuras/latas/LataRoja.tscn" id="5_g4h52"]
 [ext_resource type="Script" uid="uid://yg830vj62oqo" path="res://scripts/spawner.gd" id="6_ju2q7"]
+[ext_resource type="Texture2D" uid="uid://dpbmwuhdsmup" path="res://imagenes/imagenNivel1.jpg" id="10_2h3lj"]
 [ext_resource type="PackedScene" uid="uid://cng5y1jx28k0u" path="res://escenas/basuras/comidas/manzanas/ManzanaRoja.tscn" id="13_vij12"]
 [ext_resource type="PackedScene" uid="uid://dr10s5gq7eon6" path="res://escenas/basuras/otros/carton/Carton.tscn" id="16_uo7tm"]
-[ext_resource type="Texture2D" uid="uid://d02k28pvdvm10" path="res://imagenes/Gemini_Generated_Image_e31g2ve31g2ve31g.png" id="18_gbfpm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3alid"]
 
@@ -79,10 +79,10 @@ offset_right = 96.0
 offset_bottom = 79.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[node name="GeminiGeneratedImageE31g2Ve31g2Ve31g" type="Sprite2D" parent="." unique_id=517058181]
-z_index = -1
-position = Vector2(480.00003, 280.00003)
-scale = Vector2(0.9176136, 0.7552083)
-texture = ExtResource("18_gbfpm")
+[node name="ImagenNivel1" type="Sprite2D" parent="." unique_id=1384937750]
+z_index = -2
+position = Vector2(495, 325.25)
+scale = Vector2(0.96484375, 1.2119857)
+texture = ExtResource("10_2h3lj")
 
 [connection signal="timeout" from="Timer" to="Spawner" method="_on_timer_timeout"]

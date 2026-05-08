@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxhy1olqcjj6n"]
 
-[ext_resource type="Texture2D" uid="uid://baorjd6ietc40" path="res://imagenes/ChatGPT Image 4 may 2026, 06_43_41 p.m..png" id="1_ljvll"]
 [ext_resource type="Script" uid="uid://bbpmuelrhgdby" path="res://scripts/tutorial.gd" id="1_lmprk"]
+[ext_resource type="Texture2D" uid="uid://cgwbr2v055dtc" path="res://imagenes/imagenTutorialIngles.jpg" id="2_lmprk"]
 
 [node name="Tutorial" type="Node2D" unique_id=1019550559]
 script = ExtResource("1_lmprk")
@@ -10,9 +10,9 @@ script = ExtResource("1_lmprk")
 offset_right = 808.0
 offset_bottom = 600.0
 
-[node name="ChatGptImage4May2026,064341P_m_" type="Sprite2D" parent="." unique_id=1128023107]
-position = Vector2(404, 300)
-scale = Vector2(0.5260417, 0.5859375)
-texture = ExtResource("1_ljvll")
+[node name="ImagenTutorialIngles" type="Sprite2D" parent="." unique_id=1047741643]
+position = Vector2(400.25, 304.75)
+scale = Vector2(0.7807617, 0.90689147)
+texture = ExtResource("2_lmprk")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

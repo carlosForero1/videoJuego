@@ -12,7 +12,7 @@ func sumar_punto():
 	puntos += 1
 	actualizar_ui()
 	
-	if puntos >= 5:
+	if puntos >= 1:
 		GameManager.nivel += 1
 		print(GameManager.nivel)
 		if GameManager.nivel == 4:
@@ -30,8 +30,8 @@ func perder_vida():
 
 # ACTUALIZAR TEXTO EN PANTALLA
 func actualizar_ui():
-	$PuntajeLabel.text = "Puntos: " + str(puntos)
-	$VidasLabel.text = "Vidas: " + str(vidas)
+	$PuntajeLabel.text = "Points: " + str(puntos)
+	$VidasLabel.text = "Lives: " + str(vidas)
 
 # GAME OVER
 func game_over():

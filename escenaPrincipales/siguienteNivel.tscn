@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://ct13kbwkoarjp"]
 
-[ext_resource type="Texture2D" uid="uid://brj8l85uiqjvn" path="res://imagenes/otro nivel.png" id="1_74v3n"]
 [ext_resource type="Script" uid="uid://8u4yba5tbf7q" path="res://scripts/siguiente_nivel.gd" id="1_hplcl"]
+[ext_resource type="Texture2D" uid="uid://imo4hpj04yvm" path="res://imagenes/nivelCompletadoIngles.jpg" id="2_hplcl"]
 
 [node name="SiguienteNivel" type="Node2D" unique_id=1476877893]
 script = ExtResource("1_hplcl")
 
-[node name="OtroNivel" type="Sprite2D" parent="." unique_id=158012182]
-position = Vector2(406, 320.5)
-scale = Vector2(0.5552486, 0.60313076)
-texture = ExtResource("1_74v3n")
-
 [node name="Button" type="Button" parent="." unique_id=1489942346]
 modulate = Color(1, 1, 1, 0)
-offset_left = 240.0
-offset_top = 440.0
-offset_right = 568.0
-offset_bottom = 528.0
+offset_left = 241.0
+offset_top = 422.0
+offset_right = 569.0
+offset_bottom = 510.0
+
+[node name="NivelCompletadoIngles" type="Sprite2D" parent="." unique_id=311437969]
+position = Vector2(403.24997, 308)
+scale = Vector2(0.7846679, 0.8125)
+texture = ExtResource("2_hplcl")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
